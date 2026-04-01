@@ -1,34 +1,38 @@
 import pytest
-from app.main import DiceSimulator
+from app.main import rzut_koscia, oblicz_statystyki, symulacja_masowa, tryb_gry
 
-def test_roll_dice_standard():
-    sim = DiceSimulator()
-    rolls = sim.roll_dice(sides=6, num_dice=3)
-    assert len(rolls) == 3
-    assert all(1 <= r <= 6 for r in rolls)
+def test_rzut_koscia_zakres():
+    wynik_k6 = rzut_koscia(6)
+    assert 1 <= wynik_k6 <= 6
+    wynik_k20 = rzut_koscia(20)
+    assert 1 <= wynik_k20 <= 20
 
-def test_roll_dice_d20():
-    sim = DiceSimulator()
-    rolls = sim.roll_dice(sides=20, num_dice=1)
-    assert len(rolls) == 1
-    assert 1 <= rolls[0] <= 20
-
-def test_invalid_parameters():
-    sim = DiceSimulator()
+def test_rzut_koscia_nieprawidlowa():
     with pytest.raises(ValueError):
-        sim.roll_dice(sides=1) # Kość musi mieć min. 2 ścianki
+        rzut_koscia(10)
+
+def test_oblicz_statystyki():
+    wyniki = [2, 4, 6, 8]
+    stats = oblicz_statystyki(wyniki)
+    assert stats["suma"] == 20
+    assert stats["srednia"] == 5.0
+    assert stats["min"] == 2
+    assert stats["max"] == 8
+
+def test_oblicz_statystyki_pusta_lista():
+    stats = oblicz_statystyki([])
+    assert stats["suma"] == 0
+
+def test_symulacja_masowa():
+    wyniki = symulacja_masowa(4, 50)
+    assert len(wyniki) == 50
+    assert all(1 <= w <= 4 for w in wyniki)
+
+def test_symulacja_masowa_zla_liczba():
     with pytest.raises(ValueError):
-        sim.roll_dice(sides=6, num_dice=0)
+        symulacja_masowa(6, 0)
 
-def test_statistics():
-    sim = DiceSimulator()
-    sim.roll_dice(sides=10, num_dice=5)
-    stats = sim.get_statistics()
-    assert stats["total_rolls"] == 5
-    assert stats["min"] >= 1
-    assert stats["max"] <= 10
-
-def test_empty_statistics():
-    sim = DiceSimulator()
-    stats = sim.get_statistics()
-    assert stats["total_rolls"] == 0
+def test_tryb_gry():
+    wynik_gry = tryb_gry(6, 15)
+    assert wynik_gry["koncowa_suma"] >= 15
+    assert len(wynik_gry["historia_rzutow"]) == wynik_gry["liczba_rund"]
