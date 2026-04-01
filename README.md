@@ -1,4 +1,4 @@
-## Projekt: Symulator Rzutu Kośćmi (K4, K6, K20)
+## Projekt: Symulator Rzutu Kością (K4, K6, K20)
 
 ## Skład Grupy
 * Lider: Jakub Pijanka 102150
