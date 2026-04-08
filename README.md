@@ -1,3 +1,5 @@
+![CI](https://github.com/MiniPat78/Symulator-rzutu-koscia-2/actions/workflows/ci.yml/badge.svg)
+
 ## Projekt: Symulator Rzutu Kością (K4, K6, K20)
 
 ## Skład Grupy
