@@ -1,4 +1,4 @@
-# 🎲 Symulator Rzutu Kością - Projekt Zaliczeniowy
+# 🎲 Symulator Rzutu Kością
 
 [![CI](https://github.com/jakubpijanka05/Symulator-rzutu-koscia/actions/workflows/ci.yml/badge.svg)](https://github.com/jakubpijanka05/Symulator-rzutu-koscia/actions)
 
