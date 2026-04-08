@@ -1,6 +1,6 @@
 ![CI](https://github.com/jakubpijanka05/Symulator-rzutu-koscia/actions/workflows/ci.yml/badge.svg)
 
-**Obraz Docker Hub:** [Link do obrazu na Docker Hub](https://hub.docker.com/r/Kuba15251/symulator-kosci)
+**Obraz Docker Hub:** [Link do obrazu na Docker Hub](https://hub.docker.com/r/kuba15251/symulator-kosci)
 
 ## Projekt: Symulator Rzutu Kością (K4, K6, K20)
 
