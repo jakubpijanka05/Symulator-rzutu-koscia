@@ -27,6 +27,3 @@ Aplikacja została opublikowana jako gotowy obraz. Nie musisz instalować środo
 
 ```bash
 docker run -it kuba15251/symulator-kosci:latest
-
-**Link do dockera**
-https://hub.docker.com/r/kuba15251/symulator-kosci
