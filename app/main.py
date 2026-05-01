@@ -1,6 +1,6 @@
 import random
 
-
+def rzut_koscia(typ_kosci):
     """Symuluje rzut pojedynczą kością. Obsługuje format 'K6' oraz liczbę 6."""
     if isinstance(typ_kosci, str):
         if typ_kosci.upper().startswith('K'):
