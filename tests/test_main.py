@@ -1,7 +1,7 @@
 import pytest
 from app.main import rzut_koscia, oblicz_statystyki, symulacja_masowa, tryb_gry
 
-def test_rzut_koscia_zakres():
+ test_rzut_koscia_zakres():
     wynik_k6 = rzut_koscia(6)
     assert 1 <= wynik_k6 <= 6
     wynik_k20 = rzut_koscia(20)
